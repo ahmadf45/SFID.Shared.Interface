@@ -5,7 +5,7 @@
   },
   "projects": {
     "/Users/ahmadfauzi/Development/Dotnet/SFID.Shared.Interface/src/SFID.Shared.Interface/SFID.Shared.Interface.csproj": {
-      "version": "1.0.3",
+      "version": "1.0.4",
       "restore": {
         "projectUniqueName": "/Users/ahmadfauzi/Development/Dotnet/SFID.Shared.Interface/src/SFID.Shared.Interface/SFID.Shared.Interface.csproj",
         "projectName": "SFID.Shared.Interface",
