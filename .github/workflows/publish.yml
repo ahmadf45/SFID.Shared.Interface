@@ -5,6 +5,10 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -12,21 +16,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+    - uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
 
-    - name: Restore
-      run: dotnet restore
-
-    - name: Build
-      run: dotnet build -c Release --no-restore
-
-    - name: Pack
-      run: dotnet pack src/SFID.Shared.Interface/SFID.Shared.Interface.csproj -c Release -o out
+    - run: dotnet restore
+    - run: dotnet build -c Release --no-restore
+    - run: dotnet pack src/SFID.Shared.Interface/SFID.Shared.Interface.csproj -c Release -o out
 
     - name: Publish
-      run: dotnet nuget push out/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
-      env:
-        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget push out/*.nupkg \
+        --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+        --api-key ${{ secrets.GITHUB_TOKEN }}
