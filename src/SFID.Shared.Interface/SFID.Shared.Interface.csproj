@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- NuGet metadata -->
+    <PackageId>SFID.Shared.Interface</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Ahmad Fauzi</Authors>
+    <Company>BSI</Company>
+    <Description>Shared Hangfire job interfaces</Description>
+    <RepositoryUrl>https://github.com/ahmadf45/SFID.Shared.Interface</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <!-- Important -->
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
