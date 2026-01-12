@@ -27,6 +27,6 @@ jobs:
       run: dotnet pack src/SFID.Shared.Interface/SFID.Shared.Interface.csproj -c Release -o out
 
     - name: Publish
-      run: dotnet nuget push out/*.nupkg --source "https://nuget.pkg.github.com/ahmadf45/index.json"
+      run: dotnet nuget push out/*.nupkg --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
       env:
         NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
